@@ -36,10 +36,12 @@ If you need create the KEY gpp:
 
 reference: https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages-on-an-ubuntu-12-04-vps
 
-- Install the software:
+Install the software:
 
  ```
- sudo apt-get install gnupg
+  sudo apt-get install gnupg
+ 
+ ```
 
 ```
 Generate key
