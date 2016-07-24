@@ -50,7 +50,10 @@ email:yournotificationemail
 
 Use cron to run /usr/local/bin/pombo.py every 15 minutes as root: sudo crontab -e
 Then add this line:
-*/15 * * * * /usr/local/bin/pombo.py 2>/dev/null
+
+```
+ */15 * * * * /usr/local/bin/pombo.py 2>/dev/null
+```
 
 (Note: Don't forget to leave an empty line after the last line in your crontab file.)
 
@@ -60,8 +63,11 @@ Then add this line:
 
 Test run
 =========
-sudo -H /usr/local/bin/pombo.py
+Launch the command:
 
+```
+sudo -H /usr/local/bin/pombo.py
+```
 and see if the gpg file is sent to the webserver (You should see a message: Server responded: File stored.)
 
 
