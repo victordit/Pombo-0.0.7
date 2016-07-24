@@ -42,7 +42,7 @@ reference: https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-en
  sudo apt-get install gnupg
 
 ```
-- Generate key
+Generate key
 
 ```
 gpg --gen-key
@@ -76,7 +76,7 @@ Then add this line:
 
 ```
  */15 * * * * /usr/local/bin/pombo.py 2>/dev/null
- 
+
 ```
 
 (Note: Don't forget to leave an empty line after the last line in your crontab file.)
