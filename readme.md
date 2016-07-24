@@ -26,12 +26,35 @@ Installation
 =============
 
 Installation requires a small Linux knowledge, but nothing very complex. Instructions:
-Copy pombo.py to /usr/local/bin
 
-Copy pombo.conf to /etc
+- Copy pombo.py to /usr/local/bin
 
-Import your public key into the root keyring: sudo -H gpg --import yourpublickey.asc
-(If you do not have a GnuPG key, you can generate one.)
+- Copy pombo.conf to /etc
+
+If you need create the KEY gpp:
+------------------------------
+
+reference: https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages-on-an-ubuntu-12-04-vps
+
+- Install the software:
+
+ ```
+ sudo apt-get install gnupg
+
+```
+- Generate key
+
+```
+gpg --gen-key
+
+```
+
+Import your public key into the root keyring: 
+
+```
+sudo -H gpg --import yourpublickey.key
+
+```
 
 Choose a secret password, put it in pombo.php ($PASSWORD='mysecret';)
 
@@ -53,6 +76,7 @@ Then add this line:
 
 ```
  */15 * * * * /usr/local/bin/pombo.py 2>/dev/null
+ 
 ```
 
 (Note: Don't forget to leave an empty line after the last line in your crontab file.)
@@ -63,6 +87,8 @@ Then add this line:
 
 Test run
 =========
+
+
 Launch the command:
 
 ```
@@ -71,6 +97,12 @@ sudo -H /usr/local/bin/pombo.py
 and see if the gpg file is sent to the webserver (You should see a message: Server responded: File stored.)
 
 
+To decript file
+---------------
+```
+gpg path_to_file/file.zip.gpg
+
+```
 
 - For download previous version, check: http://sebsauvage.net/pombo/pombo_0.0.6.zip
 
